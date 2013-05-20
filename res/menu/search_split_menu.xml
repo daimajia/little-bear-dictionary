@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <item
+        android:id="@+id/add"
+        android:icon="@drawable/plus"
+        android:showAsAction="always"
+        android:title="@string/add_word">
+    </item>
+    <item
+        android:id="@+id/search"
+        android:showAsAction="always|withText"
+        android:title="@string/fast_search"/>
+    <item
+        android:id="@+id/delete"
+        android:icon="@drawable/x"
+        android:showAsAction="always"
+        android:title="@string/delete_input"/>
+
+</menu>

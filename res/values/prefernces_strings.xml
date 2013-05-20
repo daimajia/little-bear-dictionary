@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="pf_title">设置您的偏好</string>
+    <string name="pf_hand_mode_title">设置手持方式</string>
+    
+    <string name="pf_hand_mode">设置手持</string>
+        <string name="pf_hand_mode_summary">手持模式，将决定菜单在屏幕中的位置</string>
+ 		<string name="pf_hand_left">左手</string>
+ 		<string name="pf_hand_left_summary">适合右撇子</string>   
+ 		<string name="pf_hand_right">右手</string>
+ 		<string name="pf_hand_right_summary">适合左撇子</string>
+ 	
+ 	<string name="pf_theme_title">选择适合您当前状态的主题</string>
+ 	<string name="pf_theme">选择主题</string>	
+ 		<string name="pf_theme_dark">黑色主题</string>
+ 		<string name="pf_theme_light">浅色主题</string>
+ 		<string name="pf_theme_auto">自动选择</string>
+ 	
+ 	<string name="pf_global">全局效果</string>
+ 	
+    <string name="pf_about_font">设置展示字体</string>
+    <string name="pf_color">设置您喜欢的颜色</string>
+    
+    <string name="pf_small_font_size">小字字体</string>
+    <string name="pf_small_font_size_summary">定义为small的字体</string>
+    <string name="pf_medium_font_size">中号字体</string>
+    <string name="pf_medium_font_size_summary">定义为medium的字体</string>
+    <string name="pf_large_font_size">大号字体</string>
+    <string name="pf_large_font_size_summary">定义为large的字体</string>
+    <string name="pf_set_part_color">词性</string>
+    <string name="pf_set_part_color_summary">词性</string>
+    <string name="pf_set_english_color">英文解释</string>
+    <string name="pf_set_english_color_summary">词条中英文解释部分色彩</string>
+    <string name="pf_set_chinese_color">中文解释</string>
+    <string name="pf_set_chinese_color_summary">词条中中文解释部分色彩</string>
+    <string name="pf_set_example_color">例句</string>
+    <string name="pf_set_example_color_summary">词条中例句部分色彩</string>
+
+</resources>

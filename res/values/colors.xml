@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="white">#FFFFFF</color>
+    <color name="offWhite">#DDDDDD</color>
+    <color name="black">#000000</color>
+    <color name="darkGray">#333333</color>
+    <color name="lightGray">#777777</color>
+    <color name="lightBlack">#666666</color>
+    <color name="brightRed">#FF0000</color>
+    <color name="brightGreen">#00FF00</color>
+    <color name="brightBlue">#0000FF</color>
+    <color name="darkBlue">#880000FF</color>
+    <color name="transparent">#000000FF</color>
+    <color name="transGray">#cc444444</color>
+    <color name="focused">#ff5500</color>
+    <color name="selected">#ff00ff</color>
+    <color name="unfocused">#cccccccc</color>
+    <color name="pressed">#ffff22ff</color>
+    <color name="blue">#42a1fb</color>
+    <color name="gray">#f2f2f2</color>
+    <color name="lightblue">#3685e4</color>
+    <color name="navigate_text_color">#474848</color>
+    <color name="navigate_line_green">#5ba461</color>
+    <color name="lightwhite">#e3e3e3</color>
+    <color name="lightblack">#474848</color>
+    <color name="lightgreen">#c5eec2</color>
+    <color name="qqbackgroundcolor">#EEF1F6</color>
+    <color name="qqitemcolor">#FFFFFD</color>
+    <color name="qqdevidercolor">#D3D7D7</color>
+    <color name="floatviewcolor">#EEF1F6</color>
+    <color name="ui_touch">#55cccccc</color>
+    <color name="transparent_background">#aa000000</color>
+
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="user_about_padding">12.0dip</dimen>
+    <dimen name="global_gray_padding">15.0dip</dimen>
+    <dimen name="global_padding_left">5.0dip</dimen>
+    <dimen name="global_padding_right">5.0dip</dimen>
+    <dimen name="global_padding_top">10.0dip</dimen>
+    <dimen name="global_margin_left">15dip</dimen>
+    <dimen name="global_margin_top">15dip</dimen>
+    <dimen name="global_margin_right">15dip</dimen>
+    <dimen name="about_text_padding">5dip</dimen>
+    <dimen name="about_box_height">40.0dip</dimen>
+
+</resources>

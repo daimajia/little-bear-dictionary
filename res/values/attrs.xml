@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <attr name="slidingBarBackground" format="reference" />
+    <attr name="slidingBarItem" format="reference" />
+    <attr name="slidingBarItemButton" format="reference" />
+    <attr name="slidingBarItemDivider" format="reference"></attr>
+    <attr name="search_view_text_color" format="color"></attr>
+    
+    <attr name="mobile" format="reference"></attr>
+    <attr name="user" format="reference"></attr>
+    <attr name="ps" format="reference"></attr>
+    <attr name="global" format="reference"></attr>
+    <attr name="trash" format="reference"></attr>
+    
+    <attr name="divider_color" format="reference|color"></attr>
+    <attr name="info_background" format="reference|color"></attr>
+    
+
+</resources>

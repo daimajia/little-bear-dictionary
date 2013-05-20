@@ -1,0 +1,28 @@
+<dictionary>
+	<title>字典输出名称</title>
+	<dictionary_table>字典查询数据库名</dictionary_table>
+	<querystring>
+		<queryword>查询表列名</queryword>
+		...
+	</querystring>
+	<view>//便利cursor时，对每一个cursor的数据的表示形式
+		<viewtype>创建控件类型</viewtype>
+		
+		<view_padding_top></view_padding_top>
+		<view_padding_bottom></view_padding_bottom>
+		<view_padding_left></view_padding_left>
+		<view_padding_right></view_padding_right>
+		
+		
+		<sprintfstring>输出数据格式</sprintfstring>
+		<args>//
+			<argcontent>数据内容</argcontent>
+			<textstyle>字体属性</textstyle>
+			<textsize>small</textsize>[small,normal,large]
+			<textcolor>#ff000格式对应的数据0</textcolor>
+			<text_padding_top></text_padding_top>
+		</args>
+		...
+		
+	</view>
+</dictionary>

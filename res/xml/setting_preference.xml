@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:holo="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <PreferenceCategory holo:title="主要的设置" >
+        <ListPreference
+            holo:defaultValue="hand_left"
+            holo:dialogIcon="?mobile"
+            holo:dialogTitle="手持模式"
+            holo:entries="@array/hand_mode"
+            holo:entryValues="@array/hand_mode_value"
+            holo:icon="?mobile"
+            holo:key="hand_mode"
+            holo:title="@string/pf_hand_mode" />
+
+        <PreferenceScreen
+            holo:icon="?ps"
+            holo:title="设置主题" >
+            <ListPreference
+                holo:defaultValue="theme_dark"
+                holo:dialogTitle="选择主题"
+                holo:key="select_theme"
+                holo:entries="@array/theme"
+                holo:entryValues="@array/theme_value"
+                holo:title="选择内置主题" >
+            </ListPreference>
+        </PreferenceScreen>
+        <PreferenceScreen
+            holo:icon="?global"
+            holo:title="字典全局效果" >
+            <SwitchPreference
+                holo:defaultValue="false"
+                holo:key="global_effect"
+                holo:title="全局效果" >
+            </SwitchPreference>
+
+            <NumberPickerPreference
+                holo:defaultValue="20"
+                holo:dependency="global_effect"
+                holo:dialogMessage="设置全局字体大小"
+                holo:key="global_effect_size"
+                holo:max="32"
+                holo:min="10"
+                holo:summary="设置全局字体大小"
+                holo:title="字体大小" />
+
+            <net.margaritov.preference.colorpicker.ColorPickerPreference
+                holo:defaultValue="@integer/COLOR_GREEN"
+                holo:dependency="global_effect"
+                holo:key="global_effect_color"
+                holo:summary="@string/pf_set_english_color_summary"
+                holo:title="全局色彩" />
+        </PreferenceScreen>
+        <PreferenceScreen
+            holo:icon="?user"
+            holo:title="字典个性化" >
+            <SwitchPreference
+                holo:defaultValue="false"
+                holo:key="individual"
+                holo:title="个性化" />
+
+            <PreferenceCategory holo:title="可设置的选项" >
+                <PreferenceScreen
+                    holo:dependency="individual"
+                    holo:title="标号" >
+                    <SwitchPreference
+                        holo:key="number_term"
+                        holo:summary="词条当前的序号"
+                        holo:title="开启" />
+
+                    <NumberPickerPreference
+                        holo:defaultValue="20"
+                        holo:dependency="number_term"
+                        holo:dialogMessage="设置词条序号数字字体大小"
+                        holo:key="number_term_size"
+                        holo:max="32"
+                        holo:min="10"
+                        holo:summary="设置词条序号字体大小"
+                        holo:title="字体大小" />
+
+                    <net.margaritov.preference.colorpicker.ColorPickerPreference
+                        holo:defaultValue="@integer/COLOR_GREEN"
+                        holo:dependency="number_term"
+                        holo:key="number_term_color"
+                        holo:summary="设置词条序号色彩"
+                        holo:title="颜色选择" />
+                </PreferenceScreen>
+                <PreferenceScreen
+                    holo:dependency="individual"
+                    holo:title="词性" >
+                    <SwitchPreference
+                        holo:key="individual_property"
+                        holo:title="开启" />
+
+                    <NumberPickerPreference
+                        holo:defaultValue="20"
+                        holo:dependency="individual_property"
+                        holo:dialogMessage="设置词性部分字体大小"
+                        holo:key="individual_property_size"
+                        holo:max="32"
+                        holo:min="10"
+                        holo:summary="设置词性字体大小"
+                        holo:title="字体大小" />
+
+                    <net.margaritov.preference.colorpicker.ColorPickerPreference
+                        holo:defaultValue="@integer/COLOR_GREEN"
+                        holo:dependency="individual_property"
+                        holo:key="individual_property_color"
+                        holo:summary="设置词性色彩"
+                        holo:title="颜色选择" />
+                </PreferenceScreen>
+                <PreferenceScreen
+                    holo:dependency="individual"
+                    holo:title="英文解释" >
+                    <SwitchPreference
+                        holo:defaultValue="false"
+                        holo:key="english_explanation"
+                        holo:title="开启" />
+
+                    <NumberPickerPreference
+                        holo:defaultValue="20"
+                        holo:dependency="english_explanation"
+                        holo:dialogMessage="设置词性部分字体大小"
+                        holo:key="english_explanation_size"
+                        holo:max="32"
+                        holo:min="10"
+                        holo:summary="设置词性英文解释大小"
+                        holo:title="字体大小" />
+
+                    <net.margaritov.preference.colorpicker.ColorPickerPreference
+                        holo:defaultValue="@integer/COLOR_GREEN"
+                        holo:dependency="english_explanation"
+                        holo:key="english_explanation_color"
+                        holo:summary="设置英文解释色彩"
+                        holo:title="颜色选择" />
+                </PreferenceScreen>
+                <PreferenceScreen
+                    holo:dependency="individual"
+                    holo:title="中文解释" >
+                    <SwitchPreference
+                        holo:defaultValue="false"
+                        holo:key="chinese_explanation"
+                        holo:title="开启" />
+
+                    <NumberPickerPreference
+                        holo:defaultValue="20"
+                        holo:dependency="chinese_explanation"
+                        holo:dialogMessage="设置中文解释部分字体大小"
+                        holo:key="chinese_explanation_size"
+                        holo:max="32"
+                        holo:min="10"
+                        holo:summary="设置中文解释字体大小"
+                        holo:title="字体大小" />
+
+                    <net.margaritov.preference.colorpicker.ColorPickerPreference
+                        holo:defaultValue="@integer/COLOR_GREEN"
+                        holo:dependency="chinese_explanation"
+                        holo:key="chinese_explanation_color"
+                        holo:summary="设置中文解释的颜色"
+                        holo:title="颜色选择" />
+                </PreferenceScreen>
+                <PreferenceScreen
+                    holo:dependency="individual"
+                    holo:title="例句" >
+                    <SwitchPreference
+                        holo:defaultValue="false"
+                        holo:key="example"
+                        holo:title="开启" />
+
+                    <NumberPickerPreference
+                        holo:defaultValue="20"
+                        holo:dependency="example"
+                        holo:dialogMessage="设置例句部分字体大小"
+                        holo:key="example_size"
+                        holo:max="32"
+                        holo:min="10"
+                        holo:summary="设置词性字体大小"
+                        holo:title="字体大小" />
+
+                    <net.margaritov.preference.colorpicker.ColorPickerPreference
+                        holo:defaultValue="@integer/COLOR_GREEN"
+                        holo:dependency="example"
+                        holo:key="example_color"
+                        holo:summary="设置例句色彩"
+                        holo:title="颜色选择" />
+                </PreferenceScreen>
+            </PreferenceCategory>
+        </PreferenceScreen>
+    </PreferenceCategory>
+    <PreferenceCategory holo:title="琐碎的设置" >
+        <CheckBoxPreference
+            holo:defaultValue="true"
+            holo:key="autocheckupdate"
+            holo:title="自动检查更新" />
+        <CheckBoxPreference
+            holo:defaultValue="true"
+            holo:key="manualgetoffline"
+            holo:title="手动获取离线" />
+        <CheckBoxPreference
+            holo:defaultValue="true"
+            holo:key="nowifitip"
+            holo:title="非WIFI下载提示" />
+        <CheckBoxPreference
+            holo:defaultValue="true"
+            holo:key="quitetip"
+            holo:title="退出前提示" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

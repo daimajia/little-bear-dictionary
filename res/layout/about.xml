@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content" >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <ImageView
+            android:id="@+id/imageView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:src="@drawable/about_logo" />
+
+        <TextView
+            android:id="@+id/textView1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="17dp"
+            android:text="小熊词典0.1beta"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView1"
+            android:layout_marginTop="24dp"
+            android:text="  关注小熊词典的微博，以获取最新信息，或者反馈给我们您的建议："
+            android:textAppearance="?android:attr/textAppearanceSmall" />
+
+        <Button
+            android:id="@+id/weibo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView2"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="36dp"
+            android:text="关注新浪微博" />
+
+        <Button
+            android:id="@+id/feedback"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/weibo"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="27dp"
+            android:text="向我们提建议" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/feedback"
+            android:layout_marginTop="28dp"
+            android:text="  小熊词典是由代码家独立完成，耗时半年之久,一切的冲动只是因为如今市面所有的字典app，都无法离线优质词典\n  小熊词典目前还不成熟，如果出现一些让大家不愉快的状况，希望能理解，也很烦请你花费您简短时间为我反馈，我也会及时更新。" />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/textView3"
+            android:layout_marginTop="28dp"
+            android:text="  版权说明：如果有字典的任何地方侵犯了您的版权，请发邮件给我smallbeardic@163.com 我会及时删除并公开道歉。\n另：小熊词典为开源程序，开源地址请发邮件询问。如果您有心有能力奉献，欢迎加入！我们做的事情可能不是多么的宏伟，但只要他能帮到别人便足矣了。" />
+    </RelativeLayout>
+
+</ScrollView>

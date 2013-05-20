@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="hand_mode">
+        <item>左手</item>
+        <item>右手</item>
+    </string-array>
+    <string-array name="hand_mode_value">
+        <item>hand_left</item>
+        <item>hand_right</item>
+    </string-array>
+    <string-array name="theme">
+        <item>浅色主题</item>
+        <item>深色主题(推荐)</item>
+    </string-array>
+    <string-array name="theme_value">
+        <item>light_theme</item>
+        <item>dark_theme</item>
+    </string-array>
+
+</resources>

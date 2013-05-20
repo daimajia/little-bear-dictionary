@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- ==========================深色主题========================= -->
+    <style name="Dic.Theme.Dark" parent="@style/Holo.Theme">
+        <item name="slidingBarBackground">@style/slidingBarBackground_dark</item>
+        <item name="slidingBarItem">@style/slidingBarItem_dark</item>
+        <item name="slidingBarItemButton">@style/slidingBarItemButton_dark</item>
+        <item name="slidingBarItemDivider">@style/slidingBarItemDivider_dark</item>
+        <item name="vpiTabPageIndicatorStyle">@style/Widget.TabPageIndicator</item>
+
+        <!-- 设置所有的图标 -->
+        <item name="mobile">@drawable/dark_mobile</item>
+        <item name="global">@drawable/dark_globe</item>
+        <item name="ps">@drawable/dark_ps</item>
+        <item name="user">@drawable/dark_user</item>
+        <item name="trash">@drawable/dark_trash</item>
+        <!--  -->
+        <item name="vpiTitlePageIndicatorStyle">@style/TitlePageIndicator_Dark</item>
+
+        <!-- 设置关于我页面分割线的颜色 -->
+        <item name="divider_color">@color/ui_bg_divider_light</item>
+    </style>
+
+    <!-- =============================浅色主题========================== -->
+    <style name="Dic.Theme.Light" parent="@style/Holo.Theme.Light">
+
+        <!-- ActionBar的返回按钮图片 -->
+        <item name="android:homeAsUpIndicator">@drawable/abs__ic_ab_back_holo_dark</item>
+        <item name="homeAsUpIndicator">@drawable/abs__ic_ab_back_holo_dark</item>
+        <!-- SearchView icon -->
+        <item name="searchViewSearchIcon">@drawable/abs__ic_search</item>
+        <!-- SearchView close -->
+        <item name="searchViewCloseIcon">@drawable/abs__ic_clear_normal</item>
+        <!-- SlidingBar的设置 -->
+        <item name="slidingBarItem">@style/slidingBarItem_light</item>
+        <!-- ActionBar item的背景 -->
+        <item name="actionBarItemBackground">@drawable/actionbar_menu_light</item>
+        <item name="android:actionBarItemBackground">@drawable/actionbar_menu_light</item>
+        <!-- ActionBar的风格 -->
+        <item name="android:actionBarStyle">@style/ActionBar.Style.Light</item>
+        <item name="actionBarStyle">@style/ActionBar.Style.Light</item>
+        <!-- ActionBar 中menu的字体颜色 -->
+        <item name="android:actionMenuTextColor">#ffffff</item>
+        <item name="actionMenuTextColor">#ffffff</item>
+        <!-- ViewPagerIndicator的风格 -->
+        <item name="vpiTabPageIndicatorStyle">@style/VPI.TabPageIndicator.Light</item>
+        <item name="vpiTitlePageIndicatorStyle">@style/TitlePageIndicator_Light</item>
+        <item name="slidingBarBackground">@style/slidingBarBackground_dark</item>
+        <item name="slidingBarItem">@style/slidingBarItem_dark</item>
+        <item name="slidingBarItemButton">@style/slidingBarItemButton_light</item>
+        <item name="slidingBarItemDivider">@style/slidingBarItemDivider_dark</item>
+        <item name="search_view_text_color">#FFFFFF</item>
+
+        <!-- 设置关于我页面分割线的颜色 -->
+        <item name="divider_color">@color/ui_bg_divider_light</item>
+        <!-- 设置刚启动信息页面的背景色 -->
+        <item name="info_background">#ffffff</item>
+        <!-- 设置所有的ICON -->
+        <item name="mobile">@drawable/light_mobile</item>
+        <item name="global">@drawable/light_globe</item>
+        <item name="ps">@drawable/light_ps</item>
+        <item name="user">@drawable/light_user</item>
+        <item name="trash">@drawable/light_trash</item>
+    </style>
+
+</resources>

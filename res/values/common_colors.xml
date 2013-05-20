@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="text_dark">#ff3d3d3d</color>
+    <color name="text_medium">#ff666666</color>
+    <color name="text_light">#ff9a9a9a</color>
+    <color name="text_really_light">#ffd2d2d2</color>
+    <color name="text_very_light">#ffc2c2c2</color>
+    <color name="ui_bg_divider_dark">#ff9a9a9a</color>
+    <color name="ui_bg_divider_light">#ffd5d5d5</color>
+
+</resources>

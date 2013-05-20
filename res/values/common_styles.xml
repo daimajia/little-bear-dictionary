@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- 关于 借鉴自path -->
+
+    <style name="list_cell_right_container">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <style name="list_cell_right_tv">
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="section_item_divider_vertical">
+        <item name="android:background">?divider_color</item>
+        <item name="android:layout_width">1.0px</item>
+        <item name="android:layout_height">fill_parent</item>
+    </style>
+
+    <style name="thumbnail_image">
+
+        <!-- <item name="android:layout_width">@dimen/thumbnail_height</item> -->
+        <!-- <item name="android:layout_height">@dimen/thumbnail_height</item> -->
+        <item name="android:scaleType">centerCrop</item>
+        <item name="android:layout_centerVertical">true</item>
+    </style>
+
+    <style name="list_cell_divider">
+        <item name="android:layout_gravity">bottom</item>
+        <item name="android:background">?divider_color</item>
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">1.0px</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="list_cell_divider_vertical">
+        <item name="android:layout_gravity">right</item>
+        <item name="android:background">?divider_color</item>
+        <item name="android:layout_width">1.0px</item>
+        <item name="android:layout_height">fill_parent</item>
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
+    <style name="list_cell_text_title">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/text_dark</item>
+        <item name="android:paddingLeft">@dimen/global_padding_left</item>
+        <item name="android:paddingRight">@dimen/global_padding_right</item>
+        <item name="android:paddingTop">@dimen/about_text_padding</item>
+        <item name="android:paddingBottom">@dimen/about_text_padding</item>
+    </style>
+
+    <style name="list_cell_text_content">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_centerVertical">true</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">@color/text_light</item>
+        <item name="android:paddingLeft">@dimen/global_padding_left</item>
+        <item name="android:paddingRight">@dimen/global_padding_right</item>
+        <item name="android:paddingTop">@dimen/about_text_padding</item>
+        <item name="android:paddingBottom">@dimen/about_text_padding</item>
+    </style>
+    <!-- 结束关于 -->
+
+</resources>

@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="?slidingBarBackground"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/sliding_menu_foot_part"
+        android:layout_alignParentTop="true"
+        android:overScrollMode="never" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/search"
+                style="?slidingBarItemButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/search"
+                android:text="@string/search" />
+
+            <Button
+                android:id="@+id/words"
+                style="?slidingBarItemButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/book"
+                android:text="@string/words" />
+
+            <Button
+                android:id="@+id/offline_manage"
+                style="?slidingBarItemButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableLeft="@drawable/box"
+                android:text="@string/offline_menu" />
+        </LinearLayout>
+    </ScrollView>
+
+    <LinearLayout
+        android:id="@+id/sliding_menu_foot_part"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/setting"
+            style="?slidingBarItemButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/gear"
+            android:text="@string/setting" />
+
+        <View
+            style="?slidingBarItemDivider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_line_height" />
+
+        <Button
+            android:id="@+id/about"
+            style="?slidingBarItemButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/info"
+            android:text="@string/about" />
+
+        <View
+            style="?slidingBarItemDivider"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/divider_line_height" />
+
+        <Button
+            android:id="@+id/star"
+            style="?slidingBarItemButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:drawableLeft="@drawable/star"
+            android:text="@string/rate" />
+    </LinearLayout>
+
+</RelativeLayout>

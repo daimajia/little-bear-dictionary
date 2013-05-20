@@ -1,0 +1,118 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!--
+		说明
+		1.slidingBarBackground是指的是slidingbar的背景
+		2.slidingBarItem指的是slidingbar上item的风格
+		3.slidingBarItemText指的是item的字体颜色
+		4.ActionBar.Style.____ parent=Widget.Sherlock.Light.ActionBar 指的是actionbar的风格
+		5.ActionBar.Style.Title.___ parent="@style/TextAppearance.Sherlock.Widget.ActionBar.Title指的是ActionBar的风格
+		6.VPI.TabPageIndicator.____ parent="Widget.TabPageIndicator“ 指的是下载页的两个标签的样子
+		7.TitlePageIndicator_Light 指的是查询标签的样子
+    -->
+    <!-- 浅色主题 -->
+
+    <style name="slidingBarBackground_light">
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="slidingBarItem_light">
+        <item name="android:background">@null</item>
+    </style>
+
+    <style name="slidingBarItemText_light">
+        <item name="android:textColor">#FF555555</item>
+    </style>
+
+    <style name="search_view_text_color_light">
+        <item name="android:textColor">#FFFFFFFF</item>
+    </style>
+
+    <style name="ActionBar.Style.Light" parent="Widget.Sherlock.Light.ActionBar">
+        <item name="background">@drawable/actionbar_bg_light</item>
+        <item name="android:background">@drawable/actionbar_bg_light</item>
+        <item name="titleTextStyle">@style/ActionBar.Style.Title.Light</item>
+        <item name="android:titleTextStyle">@style/ActionBar.Style.Title.Light</item>
+        <item name="android:backgroundSplit">@drawable/actionbar_bg_light</item>
+        <item name="backgroundSplit">@drawable/actionbar_bg_light</item>
+    </style>
+
+    <style name="ActionBar.Style.Title.Light" parent="@style/TextAppearance.Sherlock.Widget.ActionBar.Title">
+        <item name="android:textColor">@android:color/white</item>
+    </style>
+
+    <!-- 下载页 -->
+    <style name="VPI.TabPageIndicator.Light" parent="Widget.TabPageIndicator">
+        <item name="android:textColor">#FF555555</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:dividerPadding">10dp</item>
+        <item name="android:showDividers">middle</item>
+        <item name="android:paddingLeft">8dp</item>
+        <item name="android:paddingRight">8dp</item>
+        <item name="android:fadingEdge">horizontal</item>
+        <item name="android:fadingEdgeLength">8dp</item>
+    </style>
+    <!-- 查询页 -->
+    <style name="TitlePageIndicator_Light">
+        <item name="android:background">#FFFFFFFF</item>
+        <!-- <item name="footerColor">#ffffa500</item> -->
+        <item name="footerLineHeight">1dp</item>
+        <item name="footerIndicatorHeight">3dp</item>
+        <item name="footerIndicatorStyle">underline</item>
+        <item name="android:textColor">#FF555555</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="selectedColor">#FF555555</item>
+        <item name="selectedBold">false</item>
+    </style>
+
+    <style name="slidingBarItemButton_light">
+        <item name="android:textColor">#555555</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:gravity">left|center</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/slidingbar_item_button_selector</item>
+    </style>
+
+    <!-- =====================黑色主题=================== -->
+    <style name="slidingBarBackground_dark">
+        <item name="android:background">@drawable/slidebar_bg_repeat_dark_mode</item>
+    </style>
+
+    <style name="slidingBarItem_dark">
+        <item name="android:background">#000000</item>
+    </style>
+
+    <style name="slidingBarItemButton_dark">
+        <item name="android:textColor">#555555</item>
+        <item name="android:paddingLeft">10dp</item>
+        <item name="android:drawablePadding">10dp</item>
+        <item name="android:gravity">left|center</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:background">@drawable/slidingbar_item_button_selector</item>
+    </style>
+
+    <style name="slidingBarItemDivider_dark">
+        <item name="android:background">#BBBBBB</item>
+    </style>
+
+    <style name="Widget.TabPageIndicator.Light">
+        <item name="android:textColor">#000000</item>
+    </style>
+
+    <!-- 查询页 -->
+    <style name="TitlePageIndicator_Dark">
+        <!-- <item name="android:background">#FF000000</item> -->
+        <!-- <item name="footerColor">#ffffa500</item> -->
+        <item name="footerLineHeight">1dp</item>
+        <item name="footerIndicatorHeight">3dp</item>
+        <item name="footerIndicatorStyle">underline</item>
+        <item name="android:textColor">#FFFFFFFF</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:paddingBottom">20dp</item>
+        <item name="selectedColor">#FFFFFFFF</item>
+        <item name="selectedBold">false</item>
+    </style>
+
+</resources>

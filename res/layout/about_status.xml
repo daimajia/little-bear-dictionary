@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    android:paddingTop="@dimen/global_padding_top" >
+
+    <LinearLayout
+        android:id="@+id/container"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/about_box_height"
+        android:layout_marginLeft="@dimen/global_margin_left"
+        android:layout_marginRight="@dimen/global_margin_right"
+        android:layout_marginTop="@dimen/global_margin_top"
+        android:background="@drawable/card_bg_top2"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/global_padding_left" >
+
+            <TextView
+                style="@style/list_cell_text_title"
+                android:text="字典：" />
+
+            <TextView
+                style="@style/list_cell_text_content"
+                android:text="2本" />
+
+            <View style="@style/list_cell_divider_vertical" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                style="@style/list_cell_text_title"
+                android:text="生词：" />
+
+            <TextView
+                style="@style/list_cell_text_content"
+                android:text="102" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/middle_divider"
+        style="@style/list_cell_divider"
+        android:layout_gravity="center"
+        android:layout_marginLeft="@dimen/global_margin_left"
+        android:layout_marginRight="@dimen/global_margin_right" />
+
+    <LinearLayout
+        android:id="@+id/container2"
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/about_box_height"
+        android:layout_marginLeft="@dimen/global_margin_left"
+        android:layout_marginRight="@dimen/global_margin_right"
+        android:background="@drawable/card_bg_bottom2"
+        android:orientation="horizontal"
+        android:weightSum="2" >
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1"
+            android:paddingLeft="@dimen/global_padding_left" >
+
+            <TextView
+                style="@style/list_cell_text_title"
+                android:text="词汇：" />
+
+            <TextView
+                style="@style/list_cell_text_content"
+                android:text="180000" />
+
+            <View style="@style/list_cell_divider_vertical" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="1" >
+
+            <TextView
+                style="@style/list_cell_text_title"
+                android:text="词条：" />
+
+            <TextView
+                style="@style/list_cell_text_content"
+                android:text="1290000" />
+        </RelativeLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/global_margin_top"
+        android:weightSum="5" >
+
+        <View
+            style="@style/list_cell_divider"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:paddingRight="@dimen/global_padding_right" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="最新消息" />
+
+        <View
+            style="@style/list_cell_divider"
+            android:layout_width="0dp"
+            android:layout_gravity="center"
+            android:layout_weight="2"
+            android:paddingLeft="@dimen/global_padding_left" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="100dp"
+        android:layout_marginLeft="@dimen/global_margin_left"
+        android:layout_marginRight="@dimen/global_margin_right"
+        android:layout_marginTop="@dimen/global_margin_top"
+        android:background="@drawable/card_bg" >
+    </LinearLayout>
+
+</LinearLayout>
