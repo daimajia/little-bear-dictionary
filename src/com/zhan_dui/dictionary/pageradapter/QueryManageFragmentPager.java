@@ -23,10 +23,10 @@ public class QueryManageFragmentPager extends PagerAdapter {
 	@Override
 	public Object instantiateItem(ViewGroup container, int position) {
 		View view = mDataCenter.getDictionaryViewByPosition(position);
-		ViewGroup parent = (ViewGroup) view.getParent();
-		if (parent != null && parent != container) {
-			parent.removeAllViews();
-		}
+		// ViewGroup parent = (ViewGroup) view.getParent();
+		// if (parent != null && parent != container) {
+		// parent.removeAllViews();
+		// }
 		container.addView(view);
 		return view;
 	}
