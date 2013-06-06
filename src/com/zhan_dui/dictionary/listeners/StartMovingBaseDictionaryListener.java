@@ -11,9 +11,9 @@ import android.widget.Toast;
 
 import com.zhan_dui.dictionary.R;
 import com.zhan_dui.dictionary.utils.AssetUtils;
-import com.zhan_dui.dictionary.utils.AssetUtils.AssetCopyInterface;
 import com.zhan_dui.dictionary.utils.Constants;
 import com.zhan_dui.dictionary.utils.UnzipUtils;
+import com.zhan_dui.dictionary.utils.AssetUtils.AssetCopyInterface;
 import com.zhan_dui.dictionary.utils.UnzipUtils.UnzipInterface;
 
 /**

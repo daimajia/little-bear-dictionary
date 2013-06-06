@@ -2,13 +2,13 @@ package com.zhan_dui.dictionary.datacenter;
 
 import java.util.HashMap;
 
-import com.zhan_dui.dictionary.db.DictionaryDB;
-
 import android.annotation.SuppressLint;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.view.View;
+
+import com.zhan_dui.dictionary.db.DictionaryDB;
 
 /**
  * 
@@ -81,9 +81,8 @@ public class DictionaryDataCenter {
 	}
 
 	public void addDictionaryView(String dictionaryName, View dictionaryView) {
-		mDictionaryViewMap.put(mLastPosition, new DictionaryDetail(
+		mDictionaryViewMap.put(mLastPosition++, new DictionaryDetail(
 				dictionaryName, dictionaryView));
-		mLastPosition++;
 	}
 
 	public int getDictionaryViewCount() {

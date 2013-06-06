@@ -1,5 +1,6 @@
 package com.zhan_dui.dictionary;
 
+import com.zhan_dui.dictionary.R;
 import com.zhan_dui.dictionary.utils.Constants;
 
 import android.app.Activity;

@@ -4,6 +4,7 @@ import java.io.File;
 
 import org.holoeverywhere.app.AlertDialog;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
@@ -22,6 +23,7 @@ import com.slidingmenu.lib.SlidingMenu.OnClosedListener;
 import com.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.umeng.fb.NotificationType;
 import com.umeng.fb.UMFeedbackService;
+import com.zhan_dui.dictionary.R;
 import com.zhan_dui.dictionary.fragments.AboutMeFragment;
 import com.zhan_dui.dictionary.fragments.DictionaryManageFragment;
 import com.zhan_dui.dictionary.fragments.QueryWordFragment;
@@ -42,7 +44,7 @@ public class GeneralActivity extends SlidingFragmentActivity implements
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		ThemeUtils.onActivityCreateSetTheme(this);
-		
+
 		super.onCreate(savedInstanceState);
 		getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 		mContext = this;
@@ -96,7 +98,6 @@ public class GeneralActivity extends SlidingFragmentActivity implements
 			Intent intent = new Intent(this, GuideActivity.class);
 			startActivity(intent);
 		}
-		setTitle("bazhahei");
 	}
 
 	@Override
@@ -154,6 +155,7 @@ public class GeneralActivity extends SlidingFragmentActivity implements
 		return mCurrentShowID;
 	}
 
+	@SuppressLint("Recycle")
 	private void removeCurrentFragment() {
 		Fragment currentFragment = getSupportFragmentManager()
 				.findFragmentByTag(mTag);

@@ -12,8 +12,8 @@ import android.widget.Toast;
 import com.zhan_dui.dictionary.R;
 import com.zhan_dui.dictionary.utils.Constants;
 /**
- * @Description:½âÑ¹ÎÄ¼şÊ±ºòµÄÏÔÊ¾Êı¾İhandler
- * @date 2012-11-9 ÉÏÎç11:21:01
+ * @Description:ï¿½ï¿½Ñ¹ï¿½Ä¼ï¿½Ê±ï¿½ï¿½ï¿½ï¿½ï¿½Ê¾ï¿½ï¿½ï¿½handler
+ * @date 2012-11-9 ï¿½ï¿½ï¿½ï¿½11:21:01
  */
 public class UnzipHandler extends Handler {
 

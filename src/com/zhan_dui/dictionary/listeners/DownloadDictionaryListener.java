@@ -30,8 +30,8 @@ import com.zhan_dui.dictionary.cursoradapters.OnlineListCursorAdapter;
 import com.zhan_dui.dictionary.db.DictionaryDB;
 import com.zhan_dui.dictionary.utils.Constants;
 import com.zhan_dui.dictionary.utils.DownloadUtils;
-import com.zhan_dui.dictionary.utils.DownloadUtils.DownloadUtilsInterface;
 import com.zhan_dui.dictionary.utils.UnzipFile;
+import com.zhan_dui.dictionary.utils.DownloadUtils.DownloadUtilsInterface;
 
 /**
  * 下载按钮监听器，点下后调用下载线程启动，同时激活下载Notification

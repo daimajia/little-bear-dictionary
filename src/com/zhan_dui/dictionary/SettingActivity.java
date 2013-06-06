@@ -7,6 +7,7 @@ import android.content.SharedPreferences.OnSharedPreferenceChangeListener;
 import android.os.Bundle;
 
 import com.actionbarsherlock.view.MenuItem;
+import com.zhan_dui.dictionary.R;
 import com.zhan_dui.dictionary.datacenter.QueryProcessor;
 import com.zhan_dui.dictionary.utils.ThemeUtils;
 
