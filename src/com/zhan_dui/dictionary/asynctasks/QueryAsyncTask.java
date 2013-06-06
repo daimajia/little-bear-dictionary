@@ -9,6 +9,7 @@ import org.xml.sax.SAXException;
 import android.content.Context;
 import android.os.AsyncTask;
 import android.support.v4.view.PagerAdapter;
+import android.view.View;
 
 import com.viewpagerindicator.PageIndicator;
 import com.zhan_dui.dictionary.datacenter.DictionaryDataCenter;
@@ -27,6 +28,10 @@ public class QueryAsyncTask extends AsyncTask<Void, Void, Boolean> {
 	private DictionaryDataCenter mDataCenter;
 	private String mQueryWord;
 	private Context mContext;
+
+	private String mCurrentQueryDictionaryName;
+	private View mCurrentQueryDictionaryView;
+
 	private static QueryProcessor mQueryProcessor;
 
 	public QueryAsyncTask(Context context, PageIndicator pageIndicator,
@@ -47,13 +52,12 @@ public class QueryAsyncTask extends AsyncTask<Void, Void, Boolean> {
 	@Override
 	protected Boolean doInBackground(Void... params) {
 		Boolean result = true;
-
 		for (int i = 0; i < mQueryProcessor.getDictionaryUsingCount(); i++) {
 			try {
 				QueryResult queryResult = mQueryProcessor.query(mContext,
 						mQueryWord, i);
-				mDataCenter.addDictionaryView(queryResult.getDictionaryName(),
-						queryResult.getDictionaryView());
+				mCurrentQueryDictionaryName = queryResult.getDictionaryName();
+				mCurrentQueryDictionaryView = queryResult.getDictionaryView();
 				publishProgress();
 			} catch (ParserConfigurationException e) {
 				result = false;
@@ -66,15 +70,16 @@ public class QueryAsyncTask extends AsyncTask<Void, Void, Boolean> {
 				e.printStackTrace();
 			}
 		}
-
 		return result;
 	}
 
 	@Override
 	protected void onProgressUpdate(Void... values) {
 		super.onProgressUpdate(values);
-		mPagerAdapter.notifyDataSetChanged();
+		mDataCenter.addDictionaryView(mCurrentQueryDictionaryName,
+				mCurrentQueryDictionaryView);
 		mPageIndicator.notifyDataSetChanged();
+		mPagerAdapter.notifyDataSetChanged();
 	}
 
 }
