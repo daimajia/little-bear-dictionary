@@ -16,7 +16,9 @@ Download [here](http://d.pr/f/zX6k) or [here](http://url.cn/FKoEzI), and install
 ![Light mode](http://ww2.sinaimg.cn/mw690/610dc034jw1e4ukdj165nj20aa0i5gnq.jpg)  ![Dark mode](http://ww1.sinaimg.cn/mw690/610dc034jw1e4ukg9f522j20a70i6dh7.jpg)
 
 #####4.How to compile:
-*	step0: Download a [base dictionary file](http://pan.baidu.com/share/link?shareid=460425&uk=2936412447) and place it in `asset` direcotry.
+*	step0: Download a [base dictionary file](http://pan.baidu.com/share/link?shareid=460425&uk=2936412447) and place it in `assets` direcotry. 
+    
+    if you have update ADT to version 22 , please copy `android-support-library-v4` to `libs` directory.
 
 *	 step1: Git clone all	the libraries:
 	*	[ActionBarSherlock](https://github.com/JakeWharton/ActionBarSherlock)
@@ -35,7 +37,7 @@ Download [here](http://d.pr/f/zX6k) or [here](http://url.cn/FKoEzI), and install
 
 	using `project->property->android->library` add function, to add all the library path into little-bear project.
 	
-*	step4: try to compile. (if there is any compile problem please issue or [email me](mailto:smallbeardict@163.com)).
+*	step4: try to compile. (if there is any compile problem please issue or feel free to [email me](mailto:smallbeardict@163.com)).
 
 #####5.How to contribute?
 ```php
