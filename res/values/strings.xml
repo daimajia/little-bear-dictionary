@@ -3,7 +3,6 @@
 
     <string name="app_name">小熊词典</string>
     <string name="hello_world">Hello world!</string>
-    <string name="menu_settings">Settings</string>
     <string name="menu_settings">设置</string>
     <string name="query_word">查词</string>
     <string name="words_list">生词本</string>
@@ -96,13 +95,11 @@
     <string name="get_update_success">获取更新成功</string>
     <string name="get_update_failed">网络连接遇到些错误</string>
     <string name="online_support">可供下载</string>
-    <string name="offline_manage">已经离线</string>
     <string name="offline_menu">字典管理</string>
     <string name="offline_manage">字典管理</string>
     <string name="about">关于</string>
     <string name="words">生词本</string>
     <string name="rate">打分</string>
-    <string name="search">检索</string>
     <string name="delete_input">删除输入框</string>
     <string name="add_word">添加到生词本</string>
     <string name="fast_search">查询</string>
@@ -125,5 +122,9 @@
     <string name="not_wifi_tips">当前非Wifi连接，仍然要下载吗？</string>
     <string name="swipe_show_menu">滑动显示菜单</string>
     <string name="guide_welcome">欢迎使用小熊词典</string>
+    <string name="init">小熊词典需要初始化，是否现在开始？</string>
+    <string name="init_start">开始</string>
+    <string name="init_not_now">不是现在</string>
+    
 
 </resources>

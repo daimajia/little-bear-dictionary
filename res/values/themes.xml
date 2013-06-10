@@ -47,7 +47,7 @@
         <item name="vpiTabPageIndicatorStyle">@style/VPI.TabPageIndicator.Light</item>
         <item name="vpiTitlePageIndicatorStyle">@style/TitlePageIndicator_Light</item>
         <item name="slidingBarBackground">@style/slidingBarBackground_dark</item>
-        <item name="slidingBarItem">@style/slidingBarItem_dark</item>
+
         <item name="slidingBarItemButton">@style/slidingBarItemButton_light</item>
         <item name="slidingBarItemDivider">@style/slidingBarItemDivider_dark</item>
         <item name="search_view_text_color">#FFFFFF</item>
