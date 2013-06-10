@@ -23,7 +23,6 @@ import com.slidingmenu.lib.SlidingMenu.OnClosedListener;
 import com.slidingmenu.lib.app.SlidingFragmentActivity;
 import com.umeng.fb.NotificationType;
 import com.umeng.fb.UMFeedbackService;
-import com.zhan_dui.dictionary.R;
 import com.zhan_dui.dictionary.fragments.AboutMeFragment;
 import com.zhan_dui.dictionary.fragments.DictionaryManageFragment;
 import com.zhan_dui.dictionary.fragments.QueryWordFragment;
@@ -83,17 +82,23 @@ public class GeneralActivity extends SlidingFragmentActivity implements
 
 		if (isBaseDictionaryExist() == false) {
 			AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
-			builder.setTitle("使用前的提示:");
-			builder.setMessage("你需要加载入基础词库才可以使用，是要现在开始移动么？");
-			builder.setPositiveButton("开始",
+			builder.setTitle(R.string.tips);
+			builder.setMessage(R.string.init);
+			builder.setPositiveButton(R.string.init_start,
 					new StartMovingBaseDictionaryListener(mContext));
-			builder.setNegativeButton("不用", null);
+			builder.setNegativeButton(R.string.init_not_now,
+					new DialogInterface.OnClickListener() {
+						@Override
+						public void onClick(DialogInterface dialog, int which) {
+							GeneralActivity.this.finish();
+						}
+					});
 			builder.show();
 		}
 		UMFeedbackService.enableNewReplyNotification(this,
 				NotificationType.AlertDialog);
 		Boolean first = PreferenceManager.getDefaultSharedPreferences(mContext)
-				.getBoolean("first", true);
+				.getBoolean(Constants.PREFER_FIRST, true);
 		if (first) {
 			Intent intent = new Intent(this, GuideActivity.class);
 			startActivity(intent);
