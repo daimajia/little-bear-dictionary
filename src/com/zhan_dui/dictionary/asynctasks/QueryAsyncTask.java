@@ -1,15 +1,19 @@
 package com.zhan_dui.dictionary.asynctasks;
 
 import java.io.IOException;
+import java.util.Random;
 
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
 import android.content.Context;
+import android.database.DataSetObserver;
 import android.os.AsyncTask;
 import android.support.v4.view.PagerAdapter;
+import android.util.Log;
 import android.view.View;
+import android.widget.TextView;
 
 import com.viewpagerindicator.PageIndicator;
 import com.zhan_dui.dictionary.datacenter.DictionaryDataCenter;
@@ -22,15 +26,12 @@ import com.zhan_dui.dictionary.datacenter.QueryProcessor.QueryResult;
  * @author xuanqinanhai
  * 
  */
-public class QueryAsyncTask extends AsyncTask<Void, Void, Boolean> {
+public class QueryAsyncTask extends AsyncTask<Void, Object, Boolean> {
 	private PageIndicator mPageIndicator;
 	private PagerAdapter mPagerAdapter;
 	private DictionaryDataCenter mDataCenter;
 	private String mQueryWord;
 	private Context mContext;
-
-	private String mCurrentQueryDictionaryName;
-	private View mCurrentQueryDictionaryView;
 
 	private static QueryProcessor mQueryProcessor;
 
@@ -47,18 +48,20 @@ public class QueryAsyncTask extends AsyncTask<Void, Void, Boolean> {
 	@Override
 	protected void onPreExecute() {
 		super.onPreExecute();
+		mPageIndicator.notifyDataSetChanged();
+		mPagerAdapter.notifyDataSetChanged();
 	}
 
 	@Override
 	protected Boolean doInBackground(Void... params) {
 		Boolean result = true;
+
 		for (int i = 0; i < mQueryProcessor.getDictionaryUsingCount(); i++) {
 			try {
 				QueryResult queryResult = mQueryProcessor.query(mContext,
 						mQueryWord, i);
-				mCurrentQueryDictionaryName = queryResult.getDictionaryName();
-				mCurrentQueryDictionaryView = queryResult.getDictionaryView();
-				publishProgress();
+				publishProgress(queryResult.getDictionaryName(),
+						queryResult.getDictionaryView());
 			} catch (ParserConfigurationException e) {
 				result = false;
 				e.printStackTrace();
@@ -74,12 +77,11 @@ public class QueryAsyncTask extends AsyncTask<Void, Void, Boolean> {
 	}
 
 	@Override
-	protected void onProgressUpdate(Void... values) {
+	protected void onProgressUpdate(Object... values) {
 		super.onProgressUpdate(values);
-		mDataCenter.addDictionaryView(mCurrentQueryDictionaryName,
-				mCurrentQueryDictionaryView);
-		mPageIndicator.notifyDataSetChanged();
+		mDataCenter.addDictionaryView((String) values[0], (View) values[1]);
 		mPagerAdapter.notifyDataSetChanged();
+		mPageIndicator.notifyDataSetChanged();
 	}
 
 }

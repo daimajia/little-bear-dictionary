@@ -2,7 +2,6 @@ package com.zhan_dui.dictionary.pageradapter;
 
 import android.content.Context;
 import android.support.v4.view.PagerAdapter;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 
@@ -35,7 +34,6 @@ public class QueryManageFragmentPager extends PagerAdapter {
 
 	@Override
 	public int getCount() {
-		Log.e("Lin", "Item count:" + mDataCenter.getDictionaryViewCount());
 		return mDataCenter.getDictionaryViewCount();
 	}
 
@@ -46,13 +44,11 @@ public class QueryManageFragmentPager extends PagerAdapter {
 
 	@Override
 	public void destroyItem(ViewGroup container, int position, Object object) {
-		Log.e("Lin", "remove position:" + position);
 		container.removeView((View) object);
 	}
 
 	@Override
 	public boolean isViewFromObject(View view, Object obj) {
-		Log.e("Lin", "is view from object:" + (view == obj));
 		return view == obj;
 	}
 
