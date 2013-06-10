@@ -1,19 +1,15 @@
 package com.zhan_dui.dictionary.asynctasks;
 
 import java.io.IOException;
-import java.util.Random;
 
 import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
 import android.content.Context;
-import android.database.DataSetObserver;
 import android.os.AsyncTask;
 import android.support.v4.view.PagerAdapter;
-import android.util.Log;
 import android.view.View;
-import android.widget.TextView;
 
 import com.viewpagerindicator.PageIndicator;
 import com.zhan_dui.dictionary.datacenter.DictionaryDataCenter;
@@ -48,8 +44,6 @@ public class QueryAsyncTask extends AsyncTask<Void, Object, Boolean> {
 	@Override
 	protected void onPreExecute() {
 		super.onPreExecute();
-		mPageIndicator.notifyDataSetChanged();
-		mPagerAdapter.notifyDataSetChanged();
 	}
 
 	@Override

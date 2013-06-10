@@ -127,6 +127,9 @@ public class QueryWordFragment extends SherlockFragment implements
 	@Override
 	public boolean onQueryTextSubmit(String query) {
 		DictionaryDataCenter.instance(getActivity()).clear();
+		mQueryManageFragmentPager.notifyDataSetChanged();
+		mTitlePageIndicator.notifyDataSetChanged();
+
 		new QueryAsyncTask(getActivity(), mTitlePageIndicator,
 				mQueryManageFragmentPager, query).execute();
 		if (query != null && query.length() != 0) {

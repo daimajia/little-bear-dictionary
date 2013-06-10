@@ -101,6 +101,8 @@ public class WordAdapter extends CursorAdapter implements
 			ViewHolder holder = (ViewHolder) v.getTag();
 			String textString = (String) holder.text.getText();
 			DictionaryDataCenter.instance(mContext).clear();
+			mQueryManageFragmentPager.notifyDataSetChanged();
+			mTitlePageIndicator.notifyDataSetChanged();
 			new QueryAsyncTask(mContext, mTitlePageIndicator,
 					mQueryManageFragmentPager, textString).execute();
 			dialog.setTitle(textString);

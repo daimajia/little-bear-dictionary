@@ -25,7 +25,6 @@ public class DictionaryManageFragmentPager extends PagerAdapter {
 
 	public View mOnlineDictionaryManageView;
 	public View mOfflineDictionaryManageView;
-	
 
 	@Override
 	public int getCount() {

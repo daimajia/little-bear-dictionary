@@ -93,6 +93,8 @@ public class SimpleWordAdapter extends CursorAdapter implements OnClickListener 
 			mTitlePageIndicator
 					.setOnPageChangeListener(new IndicatorOnPageChangeListener());
 			DictionaryDataCenter.instance(mContext).clear();
+			mQueryManageFragmentPager.notifyDataSetChanged();
+			mTitlePageIndicator.notifyDataSetChanged();
 			new QueryAsyncTask(mContext, mTitlePageIndicator,
 					mQueryManageFragmentPager, word).execute();
 			dialog.setTitle(word);

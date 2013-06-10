@@ -92,4 +92,5 @@ public class DictionaryDataCenter {
 	public void queryWord(String word) {
 
 	}
+
 }
