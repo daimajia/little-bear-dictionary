@@ -8,6 +8,7 @@ import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.MotionEvent;
 import android.view.animation.Animation;
 import android.view.animation.TranslateAnimation;
@@ -33,8 +34,8 @@ public class GuideActivity extends Activity {
 
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
-		mSharedPreferences = mContext.getSharedPreferences(
-				Constants.PREFER_NAME, Context.MODE_PRIVATE);
+		mSharedPreferences = PreferenceManager
+				.getDefaultSharedPreferences(mContext);
 		mEditor = mSharedPreferences.edit();
 		mEditor.putBoolean(Constants.PREFER_FIRST, false);
 		mEditor.commit();
