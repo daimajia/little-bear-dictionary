@@ -9,7 +9,7 @@
 
 #####2.DEMO
 
-Download [here](http://d.pr/f/aX88) or [here](http://url.cn/GMwa03), and install apk in your android phone.
+Download [here](http://d.pr/f/PXaH) or [here](http://url.cn/FaqVbr), and install apk in your android phone.
 
 
 #####3.Screen Shot
@@ -71,3 +71,8 @@ I am a common senior student in China 22 years old. Good at Php,Java,Android,Nod
 *	Weibo:[代码家](http://weibo.com/daimajia)
 *	Twitter:[LinHuiwen](http://twitter.com/LinHuiwen)
 *	Instagram:[daimajia](http://instagram.com/daimajia)
+*	GitHub:[xuanqinanhai](http://github.com/xuanqinanhai)
+*	GitCafe:[Miracle](https://gitcafe.com/Miracle)
+
+little bear in [GitCafe](https://gitcafe.com/Miracle/little-bear-dictionary)
+little bear in [GitHub](https://github.com/xuanqinanhai/little-bear-dictionary)
