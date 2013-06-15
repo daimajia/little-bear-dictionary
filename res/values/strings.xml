@@ -125,6 +125,6 @@
     <string name="init">小熊词典需要初始化，是否现在开始？</string>
     <string name="init_start">开始</string>
     <string name="init_not_now">不是现在</string>
-    
-
+    <string name="no_dictionary_using">您没有启用或者下载可用的词典</string>
+	<string name="no_this_word">查不到这个单词，抱歉</string>
 </resources>
