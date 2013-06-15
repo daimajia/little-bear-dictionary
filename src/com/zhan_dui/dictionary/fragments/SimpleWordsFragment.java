@@ -7,6 +7,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.actionbarsherlock.app.ActionBar;
+import com.actionbarsherlock.app.SherlockFragmentActivity;
 import com.actionbarsherlock.app.SherlockListFragment;
 import com.zhan_dui.dictionary.R;
 import com.zhan_dui.dictionary.cursoradapters.SimpleWordAdapter;
@@ -21,6 +23,15 @@ import com.zhan_dui.dictionary.db.DictionaryDB;
 public class SimpleWordsFragment extends SherlockListFragment {
 
 	DictionaryDB mDictionaryDB;
+	ActionBar mActionBar;
+
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		mActionBar = ((SherlockFragmentActivity) getActivity())
+				.getSupportActionBar();
+		mActionBar.setTitle(R.string.words);
+	}
 
 	public SimpleWordsFragment() {
 		super();

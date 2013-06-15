@@ -5,6 +5,8 @@ import android.content.Context;
 import android.content.res.Resources.Theme;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.v4.view.ViewPager;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -13,6 +15,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.InputMethodManager;
 import android.widget.AutoCompleteTextView;
+import android.widget.Toast;
 
 import com.actionbarsherlock.app.ActionBar;
 import com.actionbarsherlock.app.SherlockFragment;
@@ -37,17 +40,25 @@ public class QueryWordFragment extends SherlockFragment implements
 	private ViewPager mViewPager;
 	private TitlePageIndicator mTitlePageIndicator;
 	private String mQueryWord = "";
+	private SearchView mSearchView;
+	private ActionBar mActionBar;
+
+	private static Context mContext;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setHasOptionsMenu(true);
 		DictionaryDataCenter.instance(getActivity());
+		mActionBar = ((SherlockFragmentActivity) getActivity())
+				.getSupportActionBar();
+		mActionBar.setTitle(R.string.app_name);
 	}
 
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
+		mContext = getActivity();
 		return inflater.inflate(com.zhan_dui.dictionary.R.layout.query,
 				container, false);
 	}
@@ -89,14 +100,9 @@ public class QueryWordFragment extends SherlockFragment implements
 		return true;
 	}
 
-	private SearchView mSearchView;
-	private ActionBar mActionBar;
-
 	@SuppressLint("NewApi")
 	@Override
 	public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-		mActionBar = ((SherlockFragmentActivity) getActivity())
-				.getSupportActionBar();
 		mSearchView = new SearchView(mActionBar.getThemedContext());
 		mSearchView.setQueryHint(getActivity().getString(R.string.query_hint));
 
@@ -129,7 +135,7 @@ public class QueryWordFragment extends SherlockFragment implements
 		DictionaryDataCenter.instance(getActivity()).clear();
 		mQueryManageFragmentPager.notifyDataSetChanged();
 		mTitlePageIndicator.notifyDataSetChanged();
-
+		// if(mC)
 		new QueryAsyncTask(getActivity(), mTitlePageIndicator,
 				mQueryManageFragmentPager, query).execute();
 		if (query != null && query.length() != 0) {
@@ -152,5 +158,17 @@ public class QueryWordFragment extends SherlockFragment implements
 	public boolean onQueryTextChange(String newText) {
 		return true;
 	}
+
+	public static Handler QueryMessageHandler = new Handler() {
+		public void handleMessage(Message msg) {
+			if (msg.what == QueryAsyncTask.MSG_NO_USEFUL_DICTIONARY) {
+				Toast.makeText(mContext, R.string.no_dictionary_using,
+						Toast.LENGTH_LONG).show();
+			} else if (msg.what == QueryAsyncTask.MSG_NOT_FOUND_WORD) {
+				Toast.makeText(mContext, R.string.no_this_word,
+						Toast.LENGTH_LONG).show();
+			}
+		};
+	};
 
 }

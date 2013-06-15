@@ -51,6 +51,8 @@ public class AboutMeFragment extends SherlockFragment implements
 		super.onCreate(savedInstanceState);
 		mWeibo = Weibo.getInstance(Constants.WEIBO_APP_KEY,
 				Constants.WEIBO_REDIRECT_URI);
+		SherlockFragmentActivity sherlockFragmentActivity = (SherlockFragmentActivity) getActivity();
+		mActionBar = sherlockFragmentActivity.getSupportActionBar();
 	}
 
 	@Override
@@ -68,12 +70,7 @@ public class AboutMeFragment extends SherlockFragment implements
 	public void onViewCreated(View view, Bundle savedInstanceState) {
 		super.onViewCreated(view, savedInstanceState);
 		mContext = view.getContext();
-		SherlockFragmentActivity sherlockFragmentActivity = (SherlockFragmentActivity) getActivity();
-		mActionBar = sherlockFragmentActivity.getSupportActionBar();
-		mActionBar.setDisplayOptions(ActionBar.DISPLAY_HOME_AS_UP
-				| ActionBar.DISPLAY_SHOW_TITLE);
 		mActionBar.setTitle(R.string.about);
-
 		Button weiboButton = (Button) view.findViewById(R.id.weibo);
 		Button feedbackButton = (Button) view.findViewById(R.id.feedback);
 		weiboButton.setOnClickListener(this);

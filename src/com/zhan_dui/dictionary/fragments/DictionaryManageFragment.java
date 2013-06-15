@@ -38,7 +38,6 @@ public class DictionaryManageFragment extends SherlockFragment {
 	private ViewPager mViewPager;
 	private TabPageIndicator mTabPageIndicator;
 	private ActionBar mActionBar;
-	private LayoutInflater mLayoutInflater;
 	private DictionaryManageFragmentPager mDictionaryManageFragment;
 
 	@Override
@@ -46,7 +45,7 @@ public class DictionaryManageFragment extends SherlockFragment {
 		super.onCreate(savedInstanceState);
 		mActionBar = ((SherlockFragmentActivity) getActivity())
 				.getSupportActionBar();
-		getActivity().setTitle(R.string.offline_menu);
+		mActionBar.setTitle(R.string.offline_manage);
 		setHasOptionsMenu(true);
 	}
 
