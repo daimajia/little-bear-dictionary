@@ -15,6 +15,8 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.os.Environment;
 import android.os.Handler;
 import android.os.Message;
@@ -30,8 +32,8 @@ import com.zhan_dui.dictionary.cursoradapters.OnlineListCursorAdapter;
 import com.zhan_dui.dictionary.db.DictionaryDB;
 import com.zhan_dui.dictionary.utils.Constants;
 import com.zhan_dui.dictionary.utils.DownloadUtils;
-import com.zhan_dui.dictionary.utils.UnzipFile;
 import com.zhan_dui.dictionary.utils.DownloadUtils.DownloadUtilsInterface;
+import com.zhan_dui.dictionary.utils.UnzipFile;
 
 /**
  * 下载按钮监听器，点下后调用下载线程启动，同时激活下载Notification
@@ -93,17 +95,20 @@ public class DownloadDictionaryListener implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-
 		boolean wifiTips = PreferenceManager.getDefaultSharedPreferences(
 				mContext).getBoolean("nowifitip", true);
-		if (wifiTips) {
+		ConnectivityManager connManager = (ConnectivityManager) mContext
+				.getSystemService(Context.CONNECTIVITY_SERVICE);
+		NetworkInfo mWifi = connManager
+				.getNetworkInfo(ConnectivityManager.TYPE_WIFI);
+
+		if (wifiTips && mWifi.isConnected() == false) {
 			AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
 			builder.setTitle(R.string.tips);
 			builder.setMessage(R.string.not_wifi_tips);
 			builder.setNegativeButton(R.string.cancel, null);
 			builder.setPositiveButton(R.string.ok,
 					new DialogInterface.OnClickListener() {
-
 						@Override
 						public void onClick(DialogInterface dialog, int which) {
 							startDownload();
@@ -180,7 +185,7 @@ public class DownloadDictionaryListener implements OnClickListener {
 		 */
 		@Override
 		public void beforeThread(String url) {
-			
+
 		}
 
 		/**
@@ -203,14 +208,6 @@ public class DownloadDictionaryListener implements OnClickListener {
 				}
 			}
 		}
-
-		private Handler changeNotificationTipsHandler = new Handler() {
-			@Override
-			public void handleMessage(Message msg) {
-				super.handleMessage(msg);
-				//修改tips
-			}
-		};
 
 		/**
 		 * 解压处理Handler，只用记录出错状况
