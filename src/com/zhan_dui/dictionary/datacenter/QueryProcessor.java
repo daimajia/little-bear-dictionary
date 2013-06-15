@@ -21,6 +21,7 @@ import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Environment;
+import android.os.Handler;
 import android.text.SpannableString;
 import android.text.Spanned;
 import android.text.TextUtils;
@@ -202,14 +203,22 @@ public class QueryProcessor {
 		return mCacheUsingDictionaries.size();
 	}
 
-	public QueryResult query(Context context, String word, int position)
-			throws ParserConfigurationException, SAXException, IOException {
-		DictionaryInfo dictionaryInfo = mCacheUsingDictionaries.get(position);
-		ScrollView dictionaryView = query(context, word,
-				dictionaryInfo.mDicDir, dictionaryInfo.mDicFileName,
-				dictionaryInfo.mDicConfigFileName);
-		String dictionaryName = mCacheUsingDictionaries.get(position).mDicName;
-		return new QueryResult(dictionaryName, dictionaryView);
+	public QueryResult query(Context context, String word, int position,
+			Handler eHandler) throws ParserConfigurationException,
+			SAXException, IOException {
+		int id = getWordID(word);
+		if (id == MSG_WORD_NOT_EXISIT) {
+			eHandler.sendEmptyMessage(MSG_WORD_NOT_EXISIT);
+			return null;
+		} else {
+			DictionaryInfo dictionaryInfo = mCacheUsingDictionaries
+					.get(position);
+			ScrollView dictionaryView = query(context, word,
+					dictionaryInfo.mDicDir, dictionaryInfo.mDicFileName,
+					dictionaryInfo.mDicConfigFileName);
+			String dictionaryName = mCacheUsingDictionaries.get(position).mDicName;
+			return new QueryResult(dictionaryName, dictionaryView);
+		}
 	}
 
 	/**
@@ -243,33 +252,38 @@ public class QueryProcessor {
 						+ File.separator + filePath, null,
 				SQLiteDatabase.OPEN_READWRITE);
 		int word_id = getWordID(word);
-		String table = dictionaryParseInfomation.table;
-		String[] columns = (String[]) (dictionaryParseInfomation.queryWords
-				.toArray(new String[0]));
-		String[] selectionArgs = { word_id + "" };
-		Cursor cursor = sqLiteDatabase.query(table, columns, "word_id=?",
-				selectionArgs, null, null, null);
-		// end prepare some query variables
-		int index = 1;
-		LinearLayout wrapperLinearLayout = new LinearLayout(context);
-		wrapperLinearLayout.setOrientation(LinearLayout.VERTICAL);
-		ViewGroup.LayoutParams layoutParams = new LayoutParams(
-				LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
-		wrapperLinearLayout.setLayoutParams(layoutParams);
-		TextView textView = null;
-		while (cursor.moveToNext()) {
-			textView = processOneItem(context, cursor,
-					dictionaryParseInfomation, index++);
-			wrapperLinearLayout.addView(textView);
+		if (word_id == MSG_WORD_NOT_EXISIT) {
+			// 单词不存在时候返回null
+			return null;
+		} else {
+			String table = dictionaryParseInfomation.table;
+			String[] columns = (String[]) (dictionaryParseInfomation.queryWords
+					.toArray(new String[0]));
+			String[] selectionArgs = { word_id + "" };
+			Cursor cursor = sqLiteDatabase.query(table, columns, "word_id=?",
+					selectionArgs, null, null, null);
+			// end prepare some query variables
+			int index = 1;
+			LinearLayout wrapperLinearLayout = new LinearLayout(context);
+			wrapperLinearLayout.setOrientation(LinearLayout.VERTICAL);
+			ViewGroup.LayoutParams layoutParams = new LayoutParams(
+					LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT);
+			wrapperLinearLayout.setLayoutParams(layoutParams);
+			TextView textView = null;
+			while (cursor.moveToNext()) {
+				textView = processOneItem(context, cursor,
+						dictionaryParseInfomation, index++);
+				wrapperLinearLayout.addView(textView);
+			}
+			cursor.close();
+			sqLiteDatabase.close();
+			ScrollView scrollView = new ScrollView(context);
+			scrollView.setLayoutParams(new LayoutParams(
+					android.view.ViewGroup.LayoutParams.MATCH_PARENT,
+					android.view.ViewGroup.LayoutParams.WRAP_CONTENT));
+			scrollView.addView(wrapperLinearLayout);
+			return scrollView;
 		}
-		cursor.close();
-		sqLiteDatabase.close();
-		ScrollView scrollView = new ScrollView(context);
-		scrollView.setLayoutParams(new LayoutParams(
-				android.view.ViewGroup.LayoutParams.MATCH_PARENT,
-				android.view.ViewGroup.LayoutParams.WRAP_CONTENT));
-		scrollView.addView(wrapperLinearLayout);
-		return scrollView;
 	}
 
 	/**
@@ -413,9 +427,9 @@ public class QueryProcessor {
 		return dictionaryParseInfomation;
 	}
 
-	public static final int WORD_NOT_EXSIST = -1;
+	public static final int MSG_WORD_NOT_EXISIT = -1;
 
-	// 获取单词的ID
+	// 获取单词在快表中的ID
 	public int getWordID(String word) {
 
 		if (mCacheWordID.containsKey(word)) {
@@ -427,12 +441,15 @@ public class QueryProcessor {
 		String[] tableStrings = { "id" };
 		Cursor cursor = iddatabase.query("word", tableStrings, "word='" + word
 				+ "'", null, null, null, null);
-		int id = WORD_NOT_EXSIST;
-		if (cursor.moveToNext()) {
+		int id = MSG_WORD_NOT_EXISIT;
+
+		if (cursor.getCount() > 0) {
+			cursor.moveToNext();
 			id = cursor.getInt(0);
 		} else {
-			// TODO:处理ID不存在时候的状态
+			id = MSG_WORD_NOT_EXISIT;
 		}
+
 		iddatabase.close();
 
 		if (mCacheWordID.size() == mCacheCountForWordsID) {

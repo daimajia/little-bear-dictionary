@@ -65,7 +65,7 @@ public class AddWordAsyncTask extends AsyncTask<Void, Void, Boolean> {
 
 		if (cursor.getCount() == 0) {
 			// 检查是否在word中存在
-			if (QueryProcessor.instance(mContext).getWordID(mToAddWord) == QueryProcessor.WORD_NOT_EXSIST) {
+			if (QueryProcessor.instance(mContext).getWordID(mToAddWord) == QueryProcessor.MSG_WORD_NOT_EXISIT) {
 				returnResult = false;
 				mErrorCode = ERROR_NOT_EXSIST;
 			} else {
