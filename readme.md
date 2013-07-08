@@ -20,7 +20,7 @@ Download [here](http://d.pr/f/PXaH) or [here](http://url.cn/FaqVbr), and install
     
     if you have update ADT to version 22 , please copy `android-support-library-v4` to `libs` directory.
 
-*	 step1: Git clone all	the libraries:
+*	 step1: you should know all the libraries this project is using:
 	*	[ActionBarSherlock](https://github.com/JakeWharton/ActionBarSherlock)
 	*	[SlidingMenu](https://github.com/jfeinstein10/SlidingMenu)
 	*	[HoloEveryWhere](https://github.com/Prototik/HoloEverywhere)
@@ -30,12 +30,16 @@ Download [here](http://d.pr/f/PXaH) or [here](http://url.cn/FaqVbr), and install
 	*	[StickyListHeaders](https://github.com/emilsjolander/StickyListHeaders)
 	*	[Android-AppMsg](https://github.com/johnkil/Android-AppMsg)
 	*	[WeiboSdk](https://github.com/mobileresearch/weibo_android_sdk)
+	
+	for convinent, I gether them together and provided all compiled version.
 
-*	step2: read all the projects' `readme.md` listed above,and solve the denpendency each other.
+*	step2: git clone : [little-bear-dictionary-dependency](https://github.com/xuanqinanhai/little-bear-dictionary-dependency)
 
 *	step3: In eclipse or Android studio
 
-	using `project->property->android->library` add function, to add all the library path into little-bear project.
+	open `project->property->java Build Path->Libraries` 
+	
+	Click `Add External JARs...` add all `jar` in [little-bear-dictionary-dependency](https://github.com/xuanqinanhai/little-bear-dictionary-dependency) `jars` directory.
 	
 *	step4: try to compile. (if there is any compile problem please issue or feel free to [email me](mailto:smallbeardict@163.com)).
 
