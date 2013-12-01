@@ -16,7 +16,7 @@ Download [here](http://d.pr/f/PXaH) or [here](http://url.cn/FaqVbr), and install
 ![Light mode](http://ww2.sinaimg.cn/mw690/610dc034jw1e4ukdj165nj20aa0i5gnq.jpg)  ![Dark mode](http://ww1.sinaimg.cn/mw690/610dc034jw1e4ukg9f522j20a70i6dh7.jpg)
 
 #####4.How to compile:
-*	step0: Download a [base dictionary file](http://pan.baidu.com/share/link?shareid=460425&uk=2936412447) and place it in `assets` direcotry. 
+*	step0: Download a [base dictionary file](http://pan.baidu.com/share/link?shareid=460425&uk=2936412447) and place it in `assets` direcotry. you can also get the collins dictionary or phrase dictionary from [here](http://url.cn/UAfbWa).
     
     if you have update ADT to version 22 , please copy `android-support-library-v4` to `libs` directory.
 
@@ -71,7 +71,7 @@ I am a common senior student in China 22 years old. Good at Php,Java,Android,Nod
 
 *	Northwest Universite of China
 *	Beijing Normal Universy
-*	Site: [Daimajia](http://www.zhan-dui.com)
+*	Site: [Daimajia](http://daimajia.com)
 *	Weibo:[代码家](http://weibo.com/daimajia)
 *	Twitter:[LinHuiwen](http://twitter.com/LinHuiwen)
 *	Instagram:[daimajia](http://instagram.com/daimajia)
