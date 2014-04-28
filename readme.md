@@ -23,11 +23,11 @@ run `./gradlew assemble` (Mac) or `./gradlew.bat asseblem` (windows)
 		
 (if there is any compile problem please issue or feel free to [email me](mailto:smallbeardict@163.com)).
 
-####6.Lisence:
+####5.Lisence:
 
 MIT
 
-####7. About me:
+####6. About me:
 	 
 I am a common senior student in China 22 years old. Good at Php,Java,Android,NodeJS. I just want to make a good app. If there is any intern opportunity and you think I'm suitable, welcome to email me:  [Email Me](mailto:smallbeardict@163.com)
 
