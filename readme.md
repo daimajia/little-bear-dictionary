@@ -1,4 +1,4 @@
-##Little Bear Dictionary
+##Little Bear Dictionary  [![Build Status](https://travis-ci.org/daimajia/little-bear-dictionary.png?branch=master)](https://travis-ci.org/daimajia/little-bear-dictionary)
 
 #####1.Why you should choose little bear dictionary?
 
