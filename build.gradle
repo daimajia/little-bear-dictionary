@@ -4,6 +4,7 @@ buildscript {
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:0.9.+'
+        classpath 'com.jakewharton.sdkmanager:gradle-plugin:0.9.+'
     }
 }
 
@@ -11,7 +12,7 @@ task wrap(type: Wrapper) {
   gradleVersion = '1.9'
 }
 
-
+apply plugin: 'android-sdk-manager'
 apply plugin: 'android'
 tasks.withType(Compile) {  
     options.encoding = "UTF-8"  
