@@ -9,7 +9,7 @@
 
 #####2.DEMO
 
-Download [here](http://d.pr/f/PXaH) or [here](http://url.cn/FaqVbr), and install apk in your android phone.
+Download [here](http://jmp.sh/nTPtYxW) and install apk in your android phone.
 
 
 #####3.Screen Shot
