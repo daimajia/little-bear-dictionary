@@ -18,6 +18,11 @@ tasks.withType(Compile) {
     options.encoding = "UTF-8"  
 }  
 
+repositories {
+    mavenCentral()
+    mavenLocal()
+}
+
 dependencies {
     compile fileTree(dir: 'libs', include: '*.jar')
     compile project(':libraries:ActionbarSherlockLibrary')
