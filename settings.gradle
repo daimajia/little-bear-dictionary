@@ -1,0 +1,8 @@
+include(':libraries:ActionbarSherlockLibrary')
+include(':libraries:HoloEveryWhereLibrary')
+include(':libraries:ColorPickerPreferenceSupportHoloLibrary')
+include(':libraries:DragSortListViewLibrary')
+include(':libraries:SlidingMenuLibrary')
+include(':libraries:StickyHeaderLibrary')
+include(':libraries:ViewPagerIndicatorLibrary')
+include(':libraries:AppMsgLibrary')

@@ -3,21 +3,43 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:0.4'
+        classpath 'com.android.tools.build:gradle:0.9.+'
     }
 }
-apply plugin: 'android'
 
-dependencies {
+task wrap(type: Wrapper) {
+  gradleVersion = '1.9'
 }
 
+
+apply plugin: 'android'
+tasks.withType(Compile) {  
+    options.encoding = "UTF-8"  
+}  
+
+dependencies {
+    compile fileTree(dir: 'libs', include: '*.jar')
+    compile project(':libraries:ActionbarSherlockLibrary')
+    compile project(':libraries:ColorPickerPreferenceSupportHoloLibrary')
+    compile project(':libraries:DragSortListViewLibrary')
+    compile project(':libraries:SlidingMenuLibrary')
+    compile project(':libraries:StickyHeaderLibrary')
+    compile project(':libraries:ViewPagerIndicatorLibrary')
+    compile project(':libraries:HoloEveryWhereLibrary')
+    compile project(':libraries:AppMsgLibrary')
+    
+}
+
+ext.compileSdkVersion=19
+ext.buildToolsVersion="19.0.3"
+
 android {
-    compileSdkVersion 16
-    buildToolsVersion "16"
+    compileSdkVersion 19
+    buildToolsVersion "19.0.3"
 
     defaultConfig {
         minSdkVersion 8
-        targetSdkVersion 16
+        targetSdkVersion 19
     }
     sourceSets {
         main {
@@ -32,4 +54,21 @@ android {
 
         instrumentTest.setRoot('tests')
     }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+      android {
+      lintOptions {
+          checkReleaseBuilds false
+          // Or, if you prefer, you can continue to check for errors in release builds,
+          // but continue the build even when errors are found:
+          abortOnError false
+      }
+  }
 }
